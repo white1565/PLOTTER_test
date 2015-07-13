@@ -27,6 +27,7 @@ int x_pr,y_pr,x_dir,y_dir;
 int ch1_v,ch2_v,ch3_v;
 int ch1_s,ch2_s,ch3_s;
 int ch1_k,ch2_k,ch3_k;
+int krok;
 
 
 #endif /* DEFINE_H_ */
