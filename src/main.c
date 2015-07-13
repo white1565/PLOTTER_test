@@ -107,7 +107,17 @@ int main(void) {
 				counter2=0;
 			}
 		}
-
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0)){
+			TM_ILI9341_DrawFilledRectangle(10, 220, 50, 260, ILI9341_COLOR_RED);
+			TM_ILI9341_Puts(15, 230, "STOP", &TM_Font_7x10, ILI9341_COLOR_BLACK, ILI9341_COLOR_RED);
+			ch1_s=0;
+			TM_ILI9341_DrawFilledRectangle(70, 220, 110, 260, ILI9341_COLOR_RED);
+			TM_ILI9341_Puts(75, 230, "STOP", &TM_Font_7x10, ILI9341_COLOR_BLACK, ILI9341_COLOR_RED);
+			ch2_s=0;
+			TM_ILI9341_DrawFilledRectangle(130, 220, 170, 260, ILI9341_COLOR_RED);
+			TM_ILI9341_Puts(135, 230, "STOP", &TM_Font_7x10, ILI9341_COLOR_BLACK, ILI9341_COLOR_RED);
+			ch3_s=0;
+		}
 
 //-------- TOUCH EVENT ---------------
 		if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
