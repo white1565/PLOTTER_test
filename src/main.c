@@ -55,10 +55,15 @@ int main(void) {
 
 	i=0;
 	num=0;
-	counter=0;
+	counter1=0;
+	counter2=0;
+	counter3=0;
 
 	int ekr;
 	ekr=1;
+	ch1_v=100;
+	ch2_v=100;
+	ch3_v=100;
 	ch1_s=0;
 	ch2_s=0;
 	ch3_s=0;
@@ -75,7 +80,7 @@ int main(void) {
 	TIM_init();
 	TIMINT_init();
 
-	GPIO_SetBits(GPIOG,LED_GREEN);
+	//GPIO_SetBits(GPIOG,LED_GREEN);
 
 	//Initialize ILI9341
 	TM_ILI9341_Init();
@@ -90,11 +95,21 @@ int main(void) {
 
 
 	while (1) {
-		if(i>4){
-			tostring(str, num++);
-			//TM_ILI9341_Puts(60, 200, str , &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_ORANGE);
-			i=0;
+		if(ch1_s==1){
+			if(counter1>ch1_v){
+				GPIO_ToggleBits(GPIOG,LED_GREEN);
+				counter1=0;
+			}
 		}
+		if(ch2_s==1){
+			if(counter2>ch2_v){
+				GPIO_ToggleBits(GPIOG,LED_RED);
+				counter2=0;
+			}
+		}
+
+
+//-------- TOUCH EVENT ---------------
 		if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
             //Touch valid
 			if((touchData.x>80 && touchData.x<160)&&(touchData.y>200 && touchData.y<240)&&(ekr==1)){

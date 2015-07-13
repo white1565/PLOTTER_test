@@ -90,7 +90,6 @@ void TIM2_IRQHandler()
 {
     if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
     {
-        GPIO_ToggleBits(GPIOG,LED_GREEN | LED_RED);
         i++;
         TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
     }
@@ -100,8 +99,9 @@ void TIM3_IRQHandler()
 {
     if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
     {
-        GPIO_ToggleBits(GPIOG,LED_GREEN | LED_RED);
-        counter++;
+        counter1++;
+        counter2++;
+        counter3++;
         TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
     }
 }
@@ -138,7 +138,7 @@ void LED_init(){
 	GPIO_InitTypeDef GPIO_InitDef;
 
 	//Pins 13 and 14
-	GPIO_InitDef.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_11 | GPIO_Pin_15;
+	GPIO_InitDef.GPIO_Pin = LED_RED | LED_GREEN;
 	//Mode output
 	GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
 	//Output type push-pull

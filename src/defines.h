@@ -21,7 +21,7 @@ void TOUCH_init();
 void tostring(char [], int);
 void ekran(int);
 
-int i,num,counter;
+int i,num,counter1,counter2,counter3;
 char str[10];
 int x_pr,y_pr,x_dir,y_dir;
 int ch1_v,ch2_v,ch3_v;
