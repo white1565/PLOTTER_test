@@ -80,6 +80,7 @@ int main(void) {
 	BUTTON_init();
 	TIM_init();
 	TIMINT_init();
+	WY_init();
 
 	//GPIO_SetBits(GPIOG,LED_GREEN);
 
@@ -97,17 +98,40 @@ int main(void) {
 
 	while (1) {
 		if(ch1_s==1){
+			GPIO_ResetBits(EN_CH1);
 			if(counter1>ch1_v){
 				GPIO_ToggleBits(GPIOG,LED_GREEN);
+				GPIO_ToggleBits(STEP_CH1);
 				counter1=0;
 			}
 		}
+		else{
+			GPIO_SetBits(EN_CH1);
+		}
 		if(ch2_s==1){
+			GPIO_ResetBits(EN_CH2);
 			if(counter2>ch2_v){
 				GPIO_ToggleBits(GPIOG,LED_RED);
+				GPIO_ToggleBits(STEP_CH2);
 				counter2=0;
 			}
 		}
+		else{
+			GPIO_SetBits(EN_CH1);
+		}
+		if(ch1_k==1){
+			GPIO_SetBits(DIR_CH1);
+		}
+		else{
+			GPIO_ResetBits(DIR_CH1);
+		}
+		if(ch2_k==1){
+			GPIO_SetBits(DIR_CH2);
+		}
+		else{
+			GPIO_ResetBits(DIR_CH2);
+		}
+// ------------ Przycisk USER = STOP ALL -----------------------
 		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0)){
 			TM_ILI9341_DrawFilledRectangle(10, 220, 50, 260, ILI9341_COLOR_RED);
 			TM_ILI9341_Puts(15, 230, "STOP", &TM_Font_7x10, ILI9341_COLOR_BLACK, ILI9341_COLOR_RED);
@@ -124,6 +148,7 @@ int main(void) {
 		if (TM_STMPE811_ReadTouch(&touchData) == TM_STMPE811_State_Pressed) {
             //Touch valid
 			if((touchData.x>80 && touchData.x<160)&&(touchData.y>200 && touchData.y<240)&&(ekr==1)){
+				Delayms(50);
 				ekran(2);
 				ekr=2;
 			}
@@ -253,6 +278,8 @@ int main(void) {
 					TM_ILI9341_DrawFilledRectangle(180, 220, 235, 245, ILI9341_COLOR_WHITE);
 					TM_ILI9341_Puts(185, 225, "1/16", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_WHITE);
 					//180, 100, 235, 125,
+					set_krok(krok,1);
+					set_krok(krok,2);
 				}
 				else if((touchData.x>180 && touchData.x<235)&&(touchData.y>130 && touchData.y<155)){
 					krok=2;
@@ -267,6 +294,8 @@ int main(void) {
 					TM_ILI9341_DrawFilledRectangle(180, 220, 235, 245, ILI9341_COLOR_WHITE);
 					TM_ILI9341_Puts(185, 225, "1/16", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_WHITE);
 					//180, 130, 235, 155,
+					set_krok(krok,1);
+					set_krok(krok,2);
 				}
 				else if((touchData.x>180 && touchData.x<235)&&(touchData.y>160 && touchData.y<185)){
 					krok=4;
@@ -281,6 +310,8 @@ int main(void) {
 					TM_ILI9341_DrawFilledRectangle(180, 220, 235, 245, ILI9341_COLOR_WHITE);
 					TM_ILI9341_Puts(185, 225, "1/16", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_WHITE);
 					//180, 160, 235, 185,
+					set_krok(krok,1);
+					set_krok(krok,2);
 				}
 				else if((touchData.x>180 && touchData.x<235)&&(touchData.y>190 && touchData.y<215)){
 					krok=8;
@@ -295,6 +326,8 @@ int main(void) {
 					TM_ILI9341_DrawFilledRectangle(180, 220, 235, 245, ILI9341_COLOR_WHITE);
 					TM_ILI9341_Puts(185, 225, "1/16", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_WHITE);
 					//180, 190, 235, 215
+					set_krok(krok,1);
+					set_krok(krok,2);
 				}
 				else if((touchData.x>180 && touchData.x<235)&&(touchData.y>220 && touchData.y<245)){
 					krok=16;
@@ -309,6 +342,8 @@ int main(void) {
 					TM_ILI9341_DrawFilledRectangle(180, 220, 235, 245, ILI9341_COLOR_BLUE);
 					TM_ILI9341_Puts(185, 225, "1/16", &TM_Font_11x18, ILI9341_COLOR_WHITE, ILI9341_COLOR_BLUE);
 					//180, 220, 235, 245,
+					set_krok(krok,1);
+					set_krok(krok,2);
 				}
 			}
 

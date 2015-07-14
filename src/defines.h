@@ -13,13 +13,33 @@
 #define LED1 GPIO_Pin_11
 #define LED2 GPIO_Pin_15
 
+//--------- Wyjscia sterowników ----------------
+#define KROK1_CH1 GPIOG,GPIO_Pin_5
+#define KROK2_CH1 GPIOG,GPIO_Pin_7
+#define KROK3_CH1 GPIOC,GPIO_Pin_6
+
+#define DIR_CH1 GPIOC,GPIO_Pin_8
+#define STEP_CH1 GPIOA,GPIO_Pin_8
+#define EN_CH1 GPIOA,GPIO_Pin_10
+
+#define KROK1_CH2 GPIOG,GPIO_Pin_2
+#define KROK2_CH2 GPIOD,GPIO_Pin_14
+#define KROK3_CH2 GPIOD,GPIO_Pin_12
+
+#define DIR_CH2 GPIOD,GPIO_Pin_10
+#define STEP_CH2 GPIOD,GPIO_Pin_8
+#define EN_CH2 GPIOB,GPIO_Pin_14
+
+
 void LED_init();
+void WY_init();
 void BUTTON_init();
 void TIM_init();
 void TIMINT_init();
 void TOUCH_init();
 void tostring(char [], int);
 void ekran(int);
+void set_krok(int,int);
 
 int i,num,counter1,counter2,counter3;
 char str[10];

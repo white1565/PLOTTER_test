@@ -141,6 +141,73 @@ void tostring(char str[], int num)
     str[len] = '\0';
 }
 
+void set_krok(int kr,int ch){
+	if(ch==1){
+		GPIO_SetBits(EN_CH1);
+		Delayms(100);
+		if(kr){
+			GPIO_ResetBits(KROK1_CH1);
+			GPIO_ResetBits(KROK2_CH1);
+			GPIO_ResetBits(KROK3_CH1);
+		}
+		else if(kr==2){
+			GPIO_SetBits(KROK1_CH1);
+			GPIO_ResetBits(KROK2_CH1);
+			GPIO_ResetBits(KROK3_CH1);
+		}
+		else if(kr==4){
+			GPIO_ResetBits(KROK1_CH1);
+			GPIO_SetBits(KROK2_CH1);
+			GPIO_ResetBits(KROK3_CH1);
+		}
+		else if(kr==8){
+			GPIO_SetBits(KROK1_CH1);
+			GPIO_SetBits(KROK2_CH1);
+			GPIO_ResetBits(KROK3_CH1);
+		}
+		else if(kr==16){
+			GPIO_SetBits(KROK1_CH1);
+			GPIO_SetBits(KROK2_CH1);
+			GPIO_SetBits(KROK3_CH1);
+		}
+		Delayms(100);
+		GPIO_ResetBits(EN_CH1);
+		Delayms(100);
+	}
+	else if (ch==2){
+		GPIO_SetBits(EN_CH2);
+		Delayms(100);
+		if(kr){
+			GPIO_ResetBits(KROK1_CH2);
+			GPIO_ResetBits(KROK2_CH2);
+			GPIO_ResetBits(KROK3_CH2);
+		}
+		else if(kr==2){
+			GPIO_SetBits(KROK1_CH2);
+			GPIO_ResetBits(KROK2_CH2);
+			GPIO_ResetBits(KROK3_CH2);
+		}
+		else if(kr==4){
+			GPIO_ResetBits(KROK1_CH2);
+			GPIO_SetBits(KROK2_CH2);
+			GPIO_ResetBits(KROK3_CH2);
+		}
+		else if(kr==8){
+			GPIO_SetBits(KROK1_CH2);
+			GPIO_SetBits(KROK2_CH2);
+			GPIO_ResetBits(KROK3_CH2);
+		}
+		else if(kr==16){
+			GPIO_SetBits(KROK1_CH2);
+			GPIO_SetBits(KROK2_CH2);
+			GPIO_SetBits(KROK3_CH2);
+		}
+		Delayms(100);
+		GPIO_ResetBits(EN_CH2);
+		Delayms(100);
+	}
+}
+
 void LED_init(){
 	//Enable clock for GPOIG
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
@@ -238,6 +305,55 @@ void TOUCH_init(){
 
 	        while (1);
 	    }
+}
+
+void WY_init(){
+		//Enable clock for GPOIG
+		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
+		//Initialize struct
+		GPIO_InitTypeDef GPIO_InitDef;
+
+		//Pins 2,5,7
+		GPIO_InitDef.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_5 | GPIO_Pin_7;
+		//Mode output
+		GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
+		//Output type push-pull
+		GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
+		//Without pull resistors
+		GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_NOPULL;
+		//50MHz pin speed
+		GPIO_InitDef.GPIO_Speed = GPIO_Speed_50MHz;
+
+		//Initialize pins
+		GPIO_Init(GPIOG, &GPIO_InitDef);
+
+		//Enable clock for GPOIA
+		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+		//Pins 8,10
+		GPIO_InitDef.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_10;
+		//Initialize pins
+		GPIO_Init(GPIOA, &GPIO_InitDef);
+
+		//Enable clock for GPOIB
+		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+		//Pins 14
+		GPIO_InitDef.GPIO_Pin = GPIO_Pin_14;
+		//Initialize pins
+		GPIO_Init(GPIOB, &GPIO_InitDef);
+
+		//Enable clock for GPOIC
+		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+		//Pins 6,8
+		GPIO_InitDef.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_8;
+		//Initialize pins
+		GPIO_Init(GPIOC, &GPIO_InitDef);
+
+		//Enable clock for GPOID
+		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+		//Pins 8,10,12,14
+		GPIO_InitDef.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_10 | GPIO_Pin_12 | GPIO_Pin_14;
+		//Initialize pins
+		GPIO_Init(GPIOD, &GPIO_InitDef);
 }
 
 void sEE_TIMEOUT_UserCallback(){
