@@ -93,7 +93,10 @@ int main(void) {
 	TOUCH_init();
 	//Select touch screen orientation
 	touchData.orientation = TM_STMPE811_Orientation_Portrait_2;
-
+	GPIO_SetBits(EN_CH1);
+	GPIO_SetBits(EN_CH2);
+	set_krok(1,1);
+	set_krok(1,2);
 
 
 	while (1) {
@@ -117,7 +120,7 @@ int main(void) {
 			}
 		}
 		else{
-			GPIO_SetBits(EN_CH1);
+			GPIO_SetBits(EN_CH2);
 		}
 		if(ch1_k==1){
 			GPIO_SetBits(DIR_CH1);

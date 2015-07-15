@@ -145,7 +145,7 @@ void set_krok(int kr,int ch){
 	if(ch==1){
 		GPIO_SetBits(EN_CH1);
 		Delayms(100);
-		if(kr){
+		if(kr==1){
 			GPIO_ResetBits(KROK1_CH1);
 			GPIO_ResetBits(KROK2_CH1);
 			GPIO_ResetBits(KROK3_CH1);
@@ -177,7 +177,7 @@ void set_krok(int kr,int ch){
 	else if (ch==2){
 		GPIO_SetBits(EN_CH2);
 		Delayms(100);
-		if(kr){
+		if(kr==1){
 			GPIO_ResetBits(KROK1_CH2);
 			GPIO_ResetBits(KROK2_CH2);
 			GPIO_ResetBits(KROK3_CH2);
@@ -269,7 +269,7 @@ void TIM_init(){
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
 	//TIM_TimeBaseInitTypeDef timerInitStructure;
-	timerInitStructure.TIM_Prescaler = 18000;
+	timerInitStructure.TIM_Prescaler = 1800;
 	timerInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	timerInitStructure.TIM_Period = 10;
 	timerInitStructure.TIM_ClockDivision = TIM_CKD_DIV4;
@@ -311,49 +311,69 @@ void WY_init(){
 		//Enable clock for GPOIG
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
 		//Initialize struct
-		GPIO_InitTypeDef GPIO_InitDef;
+		GPIO_InitTypeDef GPIO_InitDefG;
 
 		//Pins 2,5,7
-		GPIO_InitDef.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_5 | GPIO_Pin_7;
+		GPIO_InitDefG.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_5 | GPIO_Pin_7;
 		//Mode output
-		GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
+		GPIO_InitDefG.GPIO_Mode = GPIO_Mode_OUT;
 		//Output type push-pull
-		GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
+		GPIO_InitDefG.GPIO_OType = GPIO_OType_PP;
 		//Without pull resistors
-		GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_NOPULL;
+		GPIO_InitDefG.GPIO_PuPd = GPIO_PuPd_NOPULL;
 		//50MHz pin speed
-		GPIO_InitDef.GPIO_Speed = GPIO_Speed_50MHz;
+		GPIO_InitDefG.GPIO_Speed = GPIO_Speed_50MHz;
 
 		//Initialize pins
-		GPIO_Init(GPIOG, &GPIO_InitDef);
+		GPIO_Init(GPIOG, &GPIO_InitDefG);
 
 		//Enable clock for GPOIA
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+		GPIO_InitTypeDef GPIO_InitDefA;
 		//Pins 8,10
-		GPIO_InitDef.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_10;
+		GPIO_InitDefA.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10;
+		//Mode output
+		GPIO_InitDefA.GPIO_Mode = GPIO_Mode_OUT;
+		//Output type push-pull
+		GPIO_InitDefA.GPIO_OType = GPIO_OType_PP;
+		//Without pull resistors
+		GPIO_InitDefA.GPIO_PuPd = GPIO_PuPd_NOPULL;
+		//50MHz pin speed
+		GPIO_InitDefA.GPIO_Speed = GPIO_Speed_50MHz;
 		//Initialize pins
-		GPIO_Init(GPIOA, &GPIO_InitDef);
-
-		//Enable clock for GPOIB
-		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-		//Pins 14
-		GPIO_InitDef.GPIO_Pin = GPIO_Pin_14;
-		//Initialize pins
-		GPIO_Init(GPIOB, &GPIO_InitDef);
+		GPIO_Init(GPIOA, &GPIO_InitDefA);
 
 		//Enable clock for GPOIC
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+		GPIO_InitTypeDef GPIO_InitDefC;
 		//Pins 6,8
-		GPIO_InitDef.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_8;
+		GPIO_InitDefC.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_8;
+		//Mode output
+		GPIO_InitDefC.GPIO_Mode = GPIO_Mode_OUT;
+		//Output type push-pull
+		GPIO_InitDefC.GPIO_OType = GPIO_OType_PP;
+		//Without pull resistors
+		GPIO_InitDefC.GPIO_PuPd = GPIO_PuPd_NOPULL;
+		//50MHz pin speed
+		GPIO_InitDefC.GPIO_Speed = GPIO_Speed_50MHz;
 		//Initialize pins
-		GPIO_Init(GPIOC, &GPIO_InitDef);
+		GPIO_Init(GPIOC, &GPIO_InitDefC);
 
 		//Enable clock for GPOID
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+		GPIO_InitTypeDef GPIO_InitDefD;
 		//Pins 8,10,12,14
-		GPIO_InitDef.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_10 | GPIO_Pin_12 | GPIO_Pin_14;
+		GPIO_InitDefD.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_15 | GPIO_Pin_10 | GPIO_Pin_12 | GPIO_Pin_14;
+		//Mode output
+		GPIO_InitDefD.GPIO_Mode = GPIO_Mode_OUT;
+		//Output type push-pull
+		GPIO_InitDefD.GPIO_OType = GPIO_OType_PP;
+		//Without pull resistors
+		GPIO_InitDefD.GPIO_PuPd = GPIO_PuPd_NOPULL;
+		//50MHz pin speed
+		GPIO_InitDefD.GPIO_Speed = GPIO_Speed_50MHz;
 		//Initialize pins
-		GPIO_Init(GPIOD, &GPIO_InitDef);
+		GPIO_Init(GPIOD, &GPIO_InitDefD);
 }
 
 void sEE_TIMEOUT_UserCallback(){

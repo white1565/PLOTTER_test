@@ -2612,7 +2612,7 @@ LOAD e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib
                 0x08000000                g_pfnVectors
                 0x080001ac                . = ALIGN (0x4)
 
-.text           0x080001ac     0x49cc
+.text           0x080001ac     0x4a00
                 0x080001ac                . = ALIGN (0x4)
  *(.text)
  .text          0x080001ac       0x40 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
@@ -2726,431 +2726,431 @@ LOAD e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib
                 0x080003f0                FMC_IRQHandler
                 0x080003f0                SAI1_IRQHandler
  .text.Delayms  0x080003f4       0x30 src\main.o
- .text.main     0x08000424      0xcf8 src\main.o
+ .text.main     0x08000424      0xd18 src\main.o
                 0x08000424                main
- .text.Delayms  0x0800111c       0x30 src\fun.o
- .text.ekran    0x0800114c      0x32c src\fun.o
-                0x0800114c                ekran
+ .text.Delayms  0x0800113c       0x30 src\fun.o
+ .text.ekran    0x0800116c      0x32c src\fun.o
+                0x0800116c                ekran
  .text.TIM2_IRQHandler
-                0x08001478       0x30 src\fun.o
-                0x08001478                TIM2_IRQHandler
+                0x08001498       0x30 src\fun.o
+                0x08001498                TIM2_IRQHandler
  .text.TIM3_IRQHandler
-                0x080014a8       0x4c src\fun.o
-                0x080014a8                TIM3_IRQHandler
+                0x080014c8       0x4c src\fun.o
+                0x080014c8                TIM3_IRQHandler
  .text.tostring
-                0x080014f4       0xc8 src\fun.o
-                0x080014f4                tostring
+                0x08001514       0xc8 src\fun.o
+                0x08001514                tostring
  .text.set_krok
-                0x080015bc      0x1d0 src\fun.o
-                0x080015bc                set_krok
+                0x080015dc      0x1cc src\fun.o
+                0x080015dc                set_krok
  .text.LED_init
-                0x0800178c       0x38 src\fun.o
-                0x0800178c                LED_init
+                0x080017a8       0x38 src\fun.o
+                0x080017a8                LED_init
  .text.BUTTON_init
-                0x080017c4       0x38 src\fun.o
-                0x080017c4                BUTTON_init
+                0x080017e0       0x38 src\fun.o
+                0x080017e0                BUTTON_init
  .text.TIM_init
-                0x080017fc       0x90 src\fun.o
-                0x080017fc                TIM_init
+                0x08001818       0x90 src\fun.o
+                0x08001818                TIM_init
  .text.TIMINT_init
-                0x0800188c       0x3c src\fun.o
-                0x0800188c                TIMINT_init
+                0x080018a8       0x3c src\fun.o
+                0x080018a8                TIMINT_init
  .text.TOUCH_init
-                0x080018c8       0x34 src\fun.o
-                0x080018c8                TOUCH_init
- .text.WY_init  0x080018fc       0xa8 src\fun.o
-                0x080018fc                WY_init
+                0x080018e4       0x34 src\fun.o
+                0x080018e4                TOUCH_init
+ .text.WY_init  0x08001918       0xc0 src\fun.o
+                0x08001918                WY_init
  .text.sEE_TIMEOUT_UserCallback
-                0x080019a4        0x8 src\fun.o
-                0x080019a4                sEE_TIMEOUT_UserCallback
- .text.Delayms  0x080019ac       0x30 src\TM_lib\tm_stm32f4_stmpe811.o
+                0x080019d8        0x8 src\fun.o
+                0x080019d8                sEE_TIMEOUT_UserCallback
+ .text.Delayms  0x080019e0       0x30 src\TM_lib\tm_stm32f4_stmpe811.o
  .text.TM_STMPE811_Init
-                0x080019dc      0x170 src\TM_lib\tm_stm32f4_stmpe811.o
-                0x080019dc                TM_STMPE811_Init
+                0x08001a10      0x170 src\TM_lib\tm_stm32f4_stmpe811.o
+                0x08001a10                TM_STMPE811_Init
  .text.TM_STMPE811_Read
-                0x08001b4c       0x24 src\TM_lib\tm_stm32f4_stmpe811.o
-                0x08001b4c                TM_STMPE811_Read
+                0x08001b80       0x24 src\TM_lib\tm_stm32f4_stmpe811.o
+                0x08001b80                TM_STMPE811_Read
  .text.TM_STMPE811_ReadTouch
-                0x08001b70      0x1a4 src\TM_lib\tm_stm32f4_stmpe811.o
-                0x08001b70                TM_STMPE811_ReadTouch
+                0x08001ba4      0x1a4 src\TM_lib\tm_stm32f4_stmpe811.o
+                0x08001ba4                TM_STMPE811_ReadTouch
  .text.TM_STMPE811_ReadX
-                0x08001d14       0xbc src\TM_lib\tm_stm32f4_stmpe811.o
-                0x08001d14                TM_STMPE811_ReadX
+                0x08001d48       0xbc src\TM_lib\tm_stm32f4_stmpe811.o
+                0x08001d48                TM_STMPE811_ReadX
  .text.TM_STMPE811_ReadY
-                0x08001dd0       0xa0 src\TM_lib\tm_stm32f4_stmpe811.o
-                0x08001dd0                TM_STMPE811_ReadY
+                0x08001e04       0xa0 src\TM_lib\tm_stm32f4_stmpe811.o
+                0x08001e04                TM_STMPE811_ReadY
  .text.TM_SPI_DMA_Init
-                0x08001e70       0xa0 src\TM_lib\tm_stm32f4_spi_dma.o
-                0x08001e70                TM_SPI_DMA_Init
+                0x08001ea4       0xa0 src\TM_lib\tm_stm32f4_spi_dma.o
+                0x08001ea4                TM_SPI_DMA_Init
  .text.TM_SPI_DMA_SendHalfWord
-                0x08001f10       0xb0 src\TM_lib\tm_stm32f4_spi_dma.o
-                0x08001f10                TM_SPI_DMA_SendHalfWord
+                0x08001f44       0xb0 src\TM_lib\tm_stm32f4_spi_dma.o
+                0x08001f44                TM_SPI_DMA_SendHalfWord
  .text.TM_SPI_DMA_Working
-                0x08001fc0       0x50 src\TM_lib\tm_stm32f4_spi_dma.o
-                0x08001fc0                TM_SPI_DMA_Working
+                0x08001ff4       0x50 src\TM_lib\tm_stm32f4_spi_dma.o
+                0x08001ff4                TM_SPI_DMA_Working
  .text.TM_SPI_DMA_INT_GetSettings
-                0x08002010       0x90 src\TM_lib\tm_stm32f4_spi_dma.o
+                0x08002044       0x90 src\TM_lib\tm_stm32f4_spi_dma.o
  .text.TM_SPI_Init
-                0x080020a0       0xec src\TM_lib\tm_stm32f4_spi.o
-                0x080020a0                TM_SPI_Init
+                0x080020d4       0xec src\TM_lib\tm_stm32f4_spi.o
+                0x080020d4                TM_SPI_Init
  .text.TM_SPI_SetDataSize
-                0x0800218c       0x78 src\TM_lib\tm_stm32f4_spi.o
-                0x0800218c                TM_SPI_SetDataSize
+                0x080021c0       0x78 src\TM_lib\tm_stm32f4_spi.o
+                0x080021c0                TM_SPI_SetDataSize
  .text.TM_SPIx_Init
-                0x08002204      0x17c src\TM_lib\tm_stm32f4_spi.o
+                0x08002238      0x17c src\TM_lib\tm_stm32f4_spi.o
  .text.TM_SPI1_INT_InitPins
-                0x08002380       0x4c src\TM_lib\tm_stm32f4_spi.o
-                0x08002380                TM_SPI1_INT_InitPins
+                0x080023b4       0x4c src\TM_lib\tm_stm32f4_spi.o
+                0x080023b4                TM_SPI1_INT_InitPins
  .text.TM_SPI2_INT_InitPins
-                0x080023cc       0x84 src\TM_lib\tm_stm32f4_spi.o
-                0x080023cc                TM_SPI2_INT_InitPins
+                0x08002400       0x84 src\TM_lib\tm_stm32f4_spi.o
+                0x08002400                TM_SPI2_INT_InitPins
  .text.TM_SPI3_INT_InitPins
-                0x08002450       0x50 src\TM_lib\tm_stm32f4_spi.o
-                0x08002450                TM_SPI3_INT_InitPins
+                0x08002484       0x50 src\TM_lib\tm_stm32f4_spi.o
+                0x08002484                TM_SPI3_INT_InitPins
  .text.TM_SPI4_INT_InitPins
-                0x080024a0       0x4c src\TM_lib\tm_stm32f4_spi.o
-                0x080024a0                TM_SPI4_INT_InitPins
+                0x080024d4       0x4c src\TM_lib\tm_stm32f4_spi.o
+                0x080024d4                TM_SPI4_INT_InitPins
  .text.TM_SPI5_INT_InitPins
-                0x080024ec       0x64 src\TM_lib\tm_stm32f4_spi.o
-                0x080024ec                TM_SPI5_INT_InitPins
+                0x08002520       0x64 src\TM_lib\tm_stm32f4_spi.o
+                0x08002520                TM_SPI5_INT_InitPins
  .text.TM_SPI6_INT_InitPins
-                0x08002550       0x14 src\TM_lib\tm_stm32f4_spi.o
-                0x08002550                TM_SPI6_INT_InitPins
+                0x08002584       0x14 src\TM_lib\tm_stm32f4_spi.o
+                0x08002584                TM_SPI6_INT_InitPins
  .text.TM_SPI_Send
-                0x08002564       0x78 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002598       0x78 src\TM_lib\tm_stm32f4_ili9341.o
  .text.TM_ILI9341_Init
-                0x080025dc       0xa8 src\TM_lib\tm_stm32f4_ili9341.o
-                0x080025dc                TM_ILI9341_Init
+                0x08002610       0xa8 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002610                TM_ILI9341_Init
  .text.TM_ILI9341_InitLCD
-                0x08002684      0x274 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002684                TM_ILI9341_InitLCD
+                0x080026b8      0x274 src\TM_lib\tm_stm32f4_ili9341.o
+                0x080026b8                TM_ILI9341_InitLCD
  .text.TM_ILI9341_SendCommand
-                0x080028f8       0x40 src\TM_lib\tm_stm32f4_ili9341.o
-                0x080028f8                TM_ILI9341_SendCommand
+                0x0800292c       0x40 src\TM_lib\tm_stm32f4_ili9341.o
+                0x0800292c                TM_ILI9341_SendCommand
  .text.TM_ILI9341_SendData
-                0x08002938       0x40 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002938                TM_ILI9341_SendData
+                0x0800296c       0x40 src\TM_lib\tm_stm32f4_ili9341.o
+                0x0800296c                TM_ILI9341_SendData
  .text.TM_ILI9341_DrawPixel
-                0x08002978       0x40 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002978                TM_ILI9341_DrawPixel
+                0x080029ac       0x40 src\TM_lib\tm_stm32f4_ili9341.o
+                0x080029ac                TM_ILI9341_DrawPixel
  .text.TM_ILI9341_SetCursorPosition
-                0x080029b8       0x80 src\TM_lib\tm_stm32f4_ili9341.o
-                0x080029b8                TM_ILI9341_SetCursorPosition
+                0x080029ec       0x80 src\TM_lib\tm_stm32f4_ili9341.o
+                0x080029ec                TM_ILI9341_SetCursorPosition
  .text.TM_ILI9341_Fill
-                0x08002a38       0x2c src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002a38                TM_ILI9341_Fill
+                0x08002a6c       0x2c src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002a6c                TM_ILI9341_Fill
  .text.TM_ILI9341_INT_Fill
-                0x08002a64       0xc4 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002a64                TM_ILI9341_INT_Fill
+                0x08002a98       0xc4 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002a98                TM_ILI9341_INT_Fill
  .text.TM_ILI9341_Delay
-                0x08002b28       0x20 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002b28                TM_ILI9341_Delay
+                0x08002b5c       0x20 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002b5c                TM_ILI9341_Delay
  .text.TM_ILI9341_Rotate
-                0x08002b48       0x88 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002b48                TM_ILI9341_Rotate
+                0x08002b7c       0x88 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002b7c                TM_ILI9341_Rotate
  .text.TM_ILI9341_Puts
-                0x08002bd0       0xb4 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002bd0                TM_ILI9341_Puts
+                0x08002c04       0xb4 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002c04                TM_ILI9341_Puts
  .text.TM_ILI9341_Putc
-                0x08002c84      0x120 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002c84                TM_ILI9341_Putc
+                0x08002cb8      0x120 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002cb8                TM_ILI9341_Putc
  .text.TM_ILI9341_DrawLine
-                0x08002da4      0x174 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002da4                TM_ILI9341_DrawLine
+                0x08002dd8      0x174 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002dd8                TM_ILI9341_DrawLine
  .text.TM_ILI9341_DrawFilledRectangle
-                0x08002f18       0x5c src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002f18                TM_ILI9341_DrawFilledRectangle
+                0x08002f4c       0x5c src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002f4c                TM_ILI9341_DrawFilledRectangle
  .text.TM_ILI9341_DrawFilledCircle
-                0x08002f74      0x190 src\TM_lib\tm_stm32f4_ili9341.o
-                0x08002f74                TM_ILI9341_DrawFilledCircle
+                0x08002fa8      0x190 src\TM_lib\tm_stm32f4_ili9341.o
+                0x08002fa8                TM_ILI9341_DrawFilledCircle
  .text.TM_I2C_Init
-                0x08003104      0x138 src\TM_lib\tm_stm32f4_i2c.o
-                0x08003104                TM_I2C_Init
+                0x08003138      0x138 src\TM_lib\tm_stm32f4_i2c.o
+                0x08003138                TM_I2C_Init
  .text.TM_I2C_Read
-                0x0800323c       0x50 src\TM_lib\tm_stm32f4_i2c.o
-                0x0800323c                TM_I2C_Read
+                0x08003270       0x50 src\TM_lib\tm_stm32f4_i2c.o
+                0x08003270                TM_I2C_Read
  .text.TM_I2C_ReadMulti
-                0x0800328c       0x88 src\TM_lib\tm_stm32f4_i2c.o
-                0x0800328c                TM_I2C_ReadMulti
+                0x080032c0       0x88 src\TM_lib\tm_stm32f4_i2c.o
+                0x080032c0                TM_I2C_ReadMulti
  .text.TM_I2C_Write
-                0x08003314       0x3c src\TM_lib\tm_stm32f4_i2c.o
-                0x08003314                TM_I2C_Write
+                0x08003348       0x3c src\TM_lib\tm_stm32f4_i2c.o
+                0x08003348                TM_I2C_Write
  .text.TM_I2C_Start
-                0x08003350      0x100 src\TM_lib\tm_stm32f4_i2c.o
-                0x08003350                TM_I2C_Start
+                0x08003384      0x100 src\TM_lib\tm_stm32f4_i2c.o
+                0x08003384                TM_I2C_Start
  .text.TM_I2C_WriteData
-                0x08003450       0x4c src\TM_lib\tm_stm32f4_i2c.o
-                0x08003450                TM_I2C_WriteData
+                0x08003484       0x4c src\TM_lib\tm_stm32f4_i2c.o
+                0x08003484                TM_I2C_WriteData
  .text.TM_I2C_ReadAck
-                0x0800349c       0x60 src\TM_lib\tm_stm32f4_i2c.o
-                0x0800349c                TM_I2C_ReadAck
+                0x080034d0       0x60 src\TM_lib\tm_stm32f4_i2c.o
+                0x080034d0                TM_I2C_ReadAck
  .text.TM_I2C_ReadNack
-                0x080034fc       0x70 src\TM_lib\tm_stm32f4_i2c.o
-                0x080034fc                TM_I2C_ReadNack
+                0x08003530       0x70 src\TM_lib\tm_stm32f4_i2c.o
+                0x08003530                TM_I2C_ReadNack
  .text.TM_I2C_Stop
-                0x0800356c       0x68 src\TM_lib\tm_stm32f4_i2c.o
-                0x0800356c                TM_I2C_Stop
+                0x080035a0       0x68 src\TM_lib\tm_stm32f4_i2c.o
+                0x080035a0                TM_I2C_Stop
  .text.TM_I2C1_INT_InitPins
-                0x080035d4       0x78 src\TM_lib\tm_stm32f4_i2c.o
-                0x080035d4                TM_I2C1_INT_InitPins
+                0x08003608       0x78 src\TM_lib\tm_stm32f4_i2c.o
+                0x08003608                TM_I2C1_INT_InitPins
  .text.TM_I2C2_INT_InitPins
-                0x0800364c       0x7c src\TM_lib\tm_stm32f4_i2c.o
-                0x0800364c                TM_I2C2_INT_InitPins
+                0x08003680       0x7c src\TM_lib\tm_stm32f4_i2c.o
+                0x08003680                TM_I2C2_INT_InitPins
  .text.TM_I2C3_INT_InitPins
-                0x080036c8       0x7c src\TM_lib\tm_stm32f4_i2c.o
-                0x080036c8                TM_I2C3_INT_InitPins
+                0x080036fc       0x7c src\TM_lib\tm_stm32f4_i2c.o
+                0x080036fc                TM_I2C3_INT_InitPins
  .text.TM_GPIO_Init
-                0x08003744       0x38 src\TM_lib\tm_stm32f4_gpio.o
-                0x08003744                TM_GPIO_Init
+                0x08003778       0x38 src\TM_lib\tm_stm32f4_gpio.o
+                0x08003778                TM_GPIO_Init
  .text.TM_GPIO_InitAlternate
-                0x0800377c       0x98 src\TM_lib\tm_stm32f4_gpio.o
-                0x0800377c                TM_GPIO_InitAlternate
+                0x080037b0       0x98 src\TM_lib\tm_stm32f4_gpio.o
+                0x080037b0                TM_GPIO_InitAlternate
  .text.TM_GPIO_GetPortSource
-                0x08003814       0x24 src\TM_lib\tm_stm32f4_gpio.o
-                0x08003814                TM_GPIO_GetPortSource
+                0x08003848       0x24 src\TM_lib\tm_stm32f4_gpio.o
+                0x08003848                TM_GPIO_GetPortSource
  .text.TM_GPIO_INT_EnableClock
-                0x08003838       0x2c src\TM_lib\tm_stm32f4_gpio.o
-                0x08003838                TM_GPIO_INT_EnableClock
+                0x0800386c       0x2c src\TM_lib\tm_stm32f4_gpio.o
+                0x0800386c                TM_GPIO_INT_EnableClock
  .text.TM_GPIO_INT_Init
-                0x08003864       0xfc src\TM_lib\tm_stm32f4_gpio.o
-                0x08003864                TM_GPIO_INT_Init
+                0x08003898       0xfc src\TM_lib\tm_stm32f4_gpio.o
+                0x08003898                TM_GPIO_INT_Init
  .text.TM_DMA_ClearFlag
-                0x08003960       0x8c src\TM_lib\tm_stm32f4_dma.o
-                0x08003960                TM_DMA_ClearFlag
+                0x08003994       0x8c src\TM_lib\tm_stm32f4_dma.o
+                0x08003994                TM_DMA_ClearFlag
  .text.TM_DMA_GetFlags
-                0x080039ec       0xa4 src\TM_lib\tm_stm32f4_dma.o
-                0x080039ec                TM_DMA_GetFlags
+                0x08003a20       0xa4 src\TM_lib\tm_stm32f4_dma.o
+                0x08003a20                TM_DMA_GetFlags
  .text.TM_DMA_TransferCompleteHandler
-                0x08003a90       0x14 src\TM_lib\tm_stm32f4_dma.o
-                0x08003a90                TM_DMA_TransferCompleteHandler
+                0x08003ac4       0x14 src\TM_lib\tm_stm32f4_dma.o
+                0x08003ac4                TM_DMA_TransferCompleteHandler
  .text.TM_DMA_HalfTransferCompleteHandler
-                0x08003aa4       0x14 src\TM_lib\tm_stm32f4_dma.o
-                0x08003aa4                TM_DMA_HalfTransferCompleteHandler
+                0x08003ad8       0x14 src\TM_lib\tm_stm32f4_dma.o
+                0x08003ad8                TM_DMA_HalfTransferCompleteHandler
  .text.TM_DMA_TransferErrorHandler
-                0x08003ab8       0x14 src\TM_lib\tm_stm32f4_dma.o
-                0x08003ab8                TM_DMA_TransferErrorHandler
+                0x08003aec       0x14 src\TM_lib\tm_stm32f4_dma.o
+                0x08003aec                TM_DMA_TransferErrorHandler
  .text.TM_DMA_DirectModeErrorHandler
-                0x08003acc       0x14 src\TM_lib\tm_stm32f4_dma.o
-                0x08003acc                TM_DMA_DirectModeErrorHandler
+                0x08003b00       0x14 src\TM_lib\tm_stm32f4_dma.o
+                0x08003b00                TM_DMA_DirectModeErrorHandler
  .text.TM_DMA_FIFOErrorHandler
-                0x08003ae0       0x14 src\TM_lib\tm_stm32f4_dma.o
-                0x08003ae0                TM_DMA_FIFOErrorHandler
+                0x08003b14       0x14 src\TM_lib\tm_stm32f4_dma.o
+                0x08003b14                TM_DMA_FIFOErrorHandler
  .text.TM_DMA_INT_ProcessInterrupt
-                0x08003af4       0xb0 src\TM_lib\tm_stm32f4_dma.o
+                0x08003b28       0xb0 src\TM_lib\tm_stm32f4_dma.o
  .text.DMA1_Stream0_IRQHandler
-                0x08003ba4       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003ba4                DMA1_Stream0_IRQHandler
+                0x08003bd8       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003bd8                DMA1_Stream0_IRQHandler
  .text.DMA1_Stream1_IRQHandler
-                0x08003bb4       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003bb4                DMA1_Stream1_IRQHandler
+                0x08003be8       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003be8                DMA1_Stream1_IRQHandler
  .text.DMA1_Stream3_IRQHandler
-                0x08003bc4       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003bc4                DMA1_Stream3_IRQHandler
+                0x08003bf8       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003bf8                DMA1_Stream3_IRQHandler
  .text.DMA1_Stream5_IRQHandler
-                0x08003bd4       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003bd4                DMA1_Stream5_IRQHandler
+                0x08003c08       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c08                DMA1_Stream5_IRQHandler
  .text.DMA1_Stream6_IRQHandler
-                0x08003be4       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003be4                DMA1_Stream6_IRQHandler
+                0x08003c18       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c18                DMA1_Stream6_IRQHandler
  .text.DMA1_Stream7_IRQHandler
-                0x08003bf4       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003bf4                DMA1_Stream7_IRQHandler
+                0x08003c28       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c28                DMA1_Stream7_IRQHandler
  .text.DMA2_Stream0_IRQHandler
-                0x08003c04       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c04                DMA2_Stream0_IRQHandler
+                0x08003c38       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c38                DMA2_Stream0_IRQHandler
  .text.DMA2_Stream1_IRQHandler
-                0x08003c14       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c14                DMA2_Stream1_IRQHandler
+                0x08003c48       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c48                DMA2_Stream1_IRQHandler
  .text.DMA2_Stream2_IRQHandler
-                0x08003c24       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c24                DMA2_Stream2_IRQHandler
+                0x08003c58       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c58                DMA2_Stream2_IRQHandler
  .text.DMA2_Stream3_IRQHandler
-                0x08003c34       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c34                DMA2_Stream3_IRQHandler
+                0x08003c68       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c68                DMA2_Stream3_IRQHandler
  .text.DMA2_Stream4_IRQHandler
-                0x08003c44       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c44                DMA2_Stream4_IRQHandler
+                0x08003c78       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c78                DMA2_Stream4_IRQHandler
  .text.DMA2_Stream5_IRQHandler
-                0x08003c54       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c54                DMA2_Stream5_IRQHandler
+                0x08003c88       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c88                DMA2_Stream5_IRQHandler
  .text.DMA2_Stream6_IRQHandler
-                0x08003c64       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c64                DMA2_Stream6_IRQHandler
+                0x08003c98       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003c98                DMA2_Stream6_IRQHandler
  .text.DMA2_Stream7_IRQHandler
-                0x08003c74       0x10 src\TM_lib\tm_stm32f4_dma.o
-                0x08003c74                DMA2_Stream7_IRQHandler
+                0x08003ca8       0x10 src\TM_lib\tm_stm32f4_dma.o
+                0x08003ca8                DMA2_Stream7_IRQHandler
  .text.NVIC_SetPriority
-                0x08003c84       0x54 src\TM_lib\tm_stm32f4_delay.o
+                0x08003cb8       0x54 src\TM_lib\tm_stm32f4_delay.o
  .text.SysTick_Config
-                0x08003cd8       0x44 src\TM_lib\tm_stm32f4_delay.o
+                0x08003d0c       0x44 src\TM_lib\tm_stm32f4_delay.o
  .text.SysTick_Handler
-                0x08003d1c       0xf0 src\TM_lib\tm_stm32f4_delay.o
-                0x08003d1c                SysTick_Handler
+                0x08003d50       0xf0 src\TM_lib\tm_stm32f4_delay.o
+                0x08003d50                SysTick_Handler
  .text.TM_DELAY_Init
-                0x08003e0c       0x4c src\TM_lib\tm_stm32f4_delay.o
-                0x08003e0c                TM_DELAY_Init
+                0x08003e40       0x4c src\TM_lib\tm_stm32f4_delay.o
+                0x08003e40                TM_DELAY_Init
  .text.DMA1_Stream4_IRQHandler
-                0x08003e58       0x78 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
-                0x08003e58                DMA1_Stream4_IRQHandler
+                0x08003e8c       0x78 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
+                0x08003e8c                DMA1_Stream4_IRQHandler
  .text.DMA1_Stream2_IRQHandler
-                0x08003ed0       0x44 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
-                0x08003ed0                DMA1_Stream2_IRQHandler
+                0x08003f04       0x44 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
+                0x08003f04                DMA1_Stream2_IRQHandler
  .text.TIM_TimeBaseInit
-                0x08003f14       0xd4 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
-                0x08003f14                TIM_TimeBaseInit
- .text.TIM_Cmd  0x08003fe8       0x40 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
-                0x08003fe8                TIM_Cmd
+                0x08003f48       0xd4 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+                0x08003f48                TIM_TimeBaseInit
+ .text.TIM_Cmd  0x0800401c       0x40 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+                0x0800401c                TIM_Cmd
  .text.TIM_ITConfig
-                0x08004028       0x48 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
-                0x08004028                TIM_ITConfig
+                0x0800405c       0x48 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+                0x0800405c                TIM_ITConfig
  .text.TIM_GetITStatus
-                0x08004070       0x54 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
-                0x08004070                TIM_GetITStatus
+                0x080040a4       0x54 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+                0x080040a4                TIM_GetITStatus
  .text.TIM_ClearITPendingBit
-                0x080040c4       0x20 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
-                0x080040c4                TIM_ClearITPendingBit
+                0x080040f8       0x20 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+                0x080040f8                TIM_ClearITPendingBit
  .text.SPI_Init
-                0x080040e4       0x88 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
-                0x080040e4                SPI_Init
+                0x08004118       0x88 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+                0x08004118                SPI_Init
  .text.SPI_StructInit
-                0x0800416c       0x48 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
-                0x0800416c                SPI_StructInit
+                0x080041a0       0x48 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+                0x080041a0                SPI_StructInit
  .text.RCC_HSEConfig
-                0x080041b4       0x24 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x080041b4                RCC_HSEConfig
+                0x080041e8       0x24 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x080041e8                RCC_HSEConfig
  .text.RCC_WaitForHSEStartUp
-                0x080041d8       0x50 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x080041d8                RCC_WaitForHSEStartUp
+                0x0800420c       0x50 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x0800420c                RCC_WaitForHSEStartUp
  .text.RCC_GetClocksFreq
-                0x08004228      0x154 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x08004228                RCC_GetClocksFreq
+                0x0800425c      0x154 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x0800425c                RCC_GetClocksFreq
  .text.RCC_AHB1PeriphClockCmd
-                0x0800437c       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x0800437c                RCC_AHB1PeriphClockCmd
+                0x080043b0       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x080043b0                RCC_AHB1PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x080043b8       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x080043b8                RCC_APB1PeriphClockCmd
+                0x080043ec       0x3c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x080043ec                RCC_APB1PeriphClockCmd
  .text.RCC_GetFlagStatus
-                0x080043f4       0x74 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
-                0x080043f4                RCC_GetFlagStatus
+                0x08004428       0x74 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+                0x08004428                RCC_GetFlagStatus
  .text.I2C_Init
-                0x08004468      0x184 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
-                0x08004468                I2C_Init
+                0x0800449c      0x184 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
+                0x0800449c                I2C_Init
  .text.I2C_GenerateSTOP
-                0x080045ec       0x40 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
-                0x080045ec                I2C_GenerateSTOP
+                0x08004620       0x40 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
+                0x08004620                I2C_GenerateSTOP
  .text.I2C_CheckEvent
-                0x0800462c       0x60 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
-                0x0800462c                I2C_CheckEvent
+                0x08004660       0x60 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
+                0x08004660                I2C_CheckEvent
  .text.I2C_GetFlagStatus
-                0x0800468c       0x68 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
-                0x0800468c                I2C_GetFlagStatus
+                0x080046c0       0x68 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
+                0x080046c0                I2C_GetFlagStatus
  .text.GPIO_Init
-                0x080046f4      0x11c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x080046f4                GPIO_Init
+                0x08004728      0x11c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x08004728                GPIO_Init
  .text.GPIO_ReadInputDataBit
-                0x08004810       0x34 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x08004810                GPIO_ReadInputDataBit
+                0x08004844       0x34 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x08004844                GPIO_ReadInputDataBit
  .text.GPIO_SetBits
-                0x08004844       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x08004844                GPIO_SetBits
+                0x08004878       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x08004878                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x08004860       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x08004860                GPIO_ResetBits
+                0x08004894       0x1c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x08004894                GPIO_ResetBits
  .text.GPIO_ToggleBits
-                0x0800487c       0x24 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
-                0x0800487c                GPIO_ToggleBits
+                0x080048b0       0x24 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+                0x080048b0                GPIO_ToggleBits
  .text.DMA_Init
-                0x080048a0       0xac Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x080048a0                DMA_Init
- .text.DMA_Cmd  0x0800494c       0x38 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x0800494c                DMA_Cmd
+                0x080048d4       0xac Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x080048d4                DMA_Init
+ .text.DMA_Cmd  0x08004980       0x38 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x08004980                DMA_Cmd
  .text.DMA_GetFlagStatus
-                0x08004984       0x78 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x08004984                DMA_GetFlagStatus
+                0x080049b8       0x78 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x080049b8                DMA_GetFlagStatus
  .text.DMA_ClearFlag
-                0x080049fc       0x5c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
-                0x080049fc                DMA_ClearFlag
+                0x08004a30       0x5c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+                0x08004a30                DMA_ClearFlag
  .text.NVIC_Init
-                0x08004a58       0xbc Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
-                0x08004a58                NVIC_Init
+                0x08004a8c       0xbc Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+                0x08004a8c                NVIC_Init
  .text.__libc_init_array
-                0x08004b14       0x4c e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
-                0x08004b14                __libc_init_array
+                0x08004b48       0x4c e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+                0x08004b48                __libc_init_array
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08004b60        0x0 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+ .eh_frame      0x08004b94        0x0 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
  *(.init)
- .init          0x08004b60        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
-                0x08004b60                _init
- .init          0x08004b64        0x8 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+ .init          0x08004b94        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+                0x08004b94                _init
+ .init          0x08004b98        0x8 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
  *(.fini)
- .fini          0x08004b6c        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
-                0x08004b6c                _fini
- .fini          0x08004b70        0x8 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
-                0x08004b78                . = ALIGN (0x4)
-                0x08004b78                _etext = .
+ .fini          0x08004ba0        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+                0x08004ba0                _fini
+ .fini          0x08004ba4        0x8 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+                0x08004bac                . = ALIGN (0x4)
+                0x08004bac                _etext = .
 
-.vfp11_veneer   0x08004b78        0x0
+.vfp11_veneer   0x08004bac        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08004b78        0x0
+.v4_bx          0x08004bac        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08004b78        0x0
+.iplt           0x08004bac        0x0
  .iplt          0x00000000        0x0 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
 
-.rodata         0x08004b78     0x1584
-                0x08004b78                . = ALIGN (0x4)
+.rodata         0x08004bac     0x1584
+                0x08004bac                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08004b78       0x4c src\main.o
- .rodata        0x08004bc4       0x6c src\fun.o
+ .rodata        0x08004bac       0x4c src\main.o
+ .rodata        0x08004bf8       0x6c src\fun.o
  *(.rodata*)
  .rodata.TM_Font7x10
-                0x08004c30      0x76c src\TM_lib\tm_stm32f4_fonts.o
-                0x08004c30                TM_Font7x10
+                0x08004c64      0x76c src\TM_lib\tm_stm32f4_fonts.o
+                0x08004c64                TM_Font7x10
  .rodata.TM_Font11x18
-                0x0800539c      0xd5c src\TM_lib\tm_stm32f4_fonts.o
-                0x0800539c                TM_Font11x18
+                0x080053d0      0xd5c src\TM_lib\tm_stm32f4_fonts.o
+                0x080053d0                TM_Font11x18
  .rodata.DMA_Flags_Bit_Pos
-                0x080060f8        0x4 src\TM_lib\tm_stm32f4_dma.o
-                0x080060fc                . = ALIGN (0x4)
+                0x0800612c        0x4 src\TM_lib\tm_stm32f4_dma.o
+                0x08006130                . = ALIGN (0x4)
 
-.rel.dyn        0x080060fc        0x0
+.rel.dyn        0x08006130        0x0
  .rel.iplt      0x00000000        0x0 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080060fc        0x0
-                0x080060fc                __exidx_start = .
+.ARM            0x08006130        0x0
+                0x08006130                __exidx_start = .
  *(.ARM.exidx*)
-                0x080060fc                __exidx_end = .
+                0x08006130                __exidx_end = .
 
-.preinit_array  0x080060fc        0x0
-                0x080060fc                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x08006130        0x0
+                0x08006130                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x080060fc                PROVIDE (__preinit_array_end, .)
+                0x08006130                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x080060fc        0x4
-                0x080060fc                PROVIDE (__init_array_start, .)
+.init_array     0x08006130        0x4
+                0x08006130                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x080060fc        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
-                0x08006100                PROVIDE (__init_array_end, .)
+ .init_array    0x08006130        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+                0x08006134                PROVIDE (__init_array_end, .)
 
-.fini_array     0x08006100        0x4
-                0x08006100                PROVIDE (__fini_array_start, .)
+.fini_array     0x08006134        0x4
+                0x08006134                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08006100        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
-                0x08006104                PROVIDE (__fini_array_end, .)
-                0x08006104                _sidata = LOADADDR (.data)
+ .fini_array    0x08006134        0x4 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+                0x08006138                PROVIDE (__fini_array_end, .)
+                0x08006138                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x94 load address 0x08006104
+.data           0x20000000       0x94 load address 0x08006138
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -3185,12 +3185,12 @@ LOAD e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib
                 0x20000084       0x10 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
                 0x20000094                . = ALIGN (0x4)
                 0x20000094                _edata = .
-                0x08006198                _siccmram = LOADADDR (.ccmram)
+                0x080061cc                _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x20000094        0x0 load address 0x08006198
+.igot.plt       0x20000094        0x0 load address 0x080061cc
  .igot.plt      0x00000000        0x0 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x08006198
+.ccmram         0x10000000        0x0 load address 0x080061cc
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _sccmram = .
  *(.ccmram)
@@ -3339,29 +3339,29 @@ LOAD e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib
                 0x00000558       0x22 e:/programy/programowanie/truestudio for arm lite 5.3.0/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
 OUTPUT(PLOTTER_test.elf elf32-littlearm)
 
-.debug_info     0x00000000     0xc904
+.debug_info     0x00000000     0xc931
  .debug_info    0x00000000      0x5bd src\system_stm32f4xx.o
  .debug_info    0x000005bd      0x122 src\stm32f4xx_it.o
  .debug_info    0x000006df       0x88 src\startup_stm32f429x.o
  .debug_info    0x00000767      0x4be src\main.o
- .debug_info    0x00000c25      0xc01 src\fun.o
- .debug_info    0x00001826      0x60a src\TM_lib\tm_stm32f4_stmpe811.o
- .debug_info    0x00001e30      0xa34 src\TM_lib\tm_stm32f4_spi_dma.o
- .debug_info    0x00002864      0xc41 src\TM_lib\tm_stm32f4_spi.o
- .debug_info    0x000034a5      0xc36 src\TM_lib\tm_stm32f4_ili9341.o
- .debug_info    0x000040db      0xbc4 src\TM_lib\tm_stm32f4_i2c.o
- .debug_info    0x00004c9f      0x9a4 src\TM_lib\tm_stm32f4_gpio.o
- .debug_info    0x00005643      0x3a3 src\TM_lib\tm_stm32f4_fonts.o
- .debug_info    0x000059e6      0xab7 src\TM_lib\tm_stm32f4_dma.o
- .debug_info    0x0000649d      0xbbc src\TM_lib\tm_stm32f4_delay.o
- .debug_info    0x00007059      0x4fa Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
- .debug_info    0x00007553     0x1c65 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
- .debug_info    0x000091b8      0xb25 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
- .debug_info    0x00009cdd      0xe15 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
- .debug_info    0x0000aaf2      0xb8b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
- .debug_info    0x0000b67d      0x609 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
- .debug_info    0x0000bc86      0x73d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
- .debug_info    0x0000c3c3      0x541 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_info    0x00000c25      0xc2e src\fun.o
+ .debug_info    0x00001853      0x60a src\TM_lib\tm_stm32f4_stmpe811.o
+ .debug_info    0x00001e5d      0xa34 src\TM_lib\tm_stm32f4_spi_dma.o
+ .debug_info    0x00002891      0xc41 src\TM_lib\tm_stm32f4_spi.o
+ .debug_info    0x000034d2      0xc36 src\TM_lib\tm_stm32f4_ili9341.o
+ .debug_info    0x00004108      0xbc4 src\TM_lib\tm_stm32f4_i2c.o
+ .debug_info    0x00004ccc      0x9a4 src\TM_lib\tm_stm32f4_gpio.o
+ .debug_info    0x00005670      0x3a3 src\TM_lib\tm_stm32f4_fonts.o
+ .debug_info    0x00005a13      0xab7 src\TM_lib\tm_stm32f4_dma.o
+ .debug_info    0x000064ca      0xbbc src\TM_lib\tm_stm32f4_delay.o
+ .debug_info    0x00007086      0x4fa Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
+ .debug_info    0x00007580     0x1c65 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+ .debug_info    0x000091e5      0xb25 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_info    0x00009d0a      0xe15 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_info    0x0000ab1f      0xb8b Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
+ .debug_info    0x0000b6aa      0x609 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_info    0x0000bcb3      0x73d Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_info    0x0000c3f0      0x541 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
 .debug_abbrev   0x00000000     0x228b
  .debug_abbrev  0x00000000      0x138 src\system_stm32f4xx.o
@@ -3457,72 +3457,72 @@ OUTPUT(PLOTTER_test.elf elf32-littlearm)
  .debug_ranges  0x00000cb0       0xa0 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
  .debug_ranges  0x00000d50       0x30 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
-.debug_line     0x00000000     0x548b
+.debug_line     0x00000000     0x5498
  .debug_line    0x00000000      0x1f9 src\system_stm32f4xx.o
  .debug_line    0x000001f9      0x1d1 src\stm32f4xx_it.o
  .debug_line    0x000003ca       0x7a src\startup_stm32f429x.o
- .debug_line    0x00000444      0x36a src\main.o
- .debug_line    0x000007ae      0x463 src\fun.o
- .debug_line    0x00000c11      0x324 src\TM_lib\tm_stm32f4_stmpe811.o
- .debug_line    0x00000f35      0x32b src\TM_lib\tm_stm32f4_spi_dma.o
- .debug_line    0x00001260      0x4e8 src\TM_lib\tm_stm32f4_spi.o
- .debug_line    0x00001748      0x566 src\TM_lib\tm_stm32f4_ili9341.o
- .debug_line    0x00001cae      0x41e src\TM_lib\tm_stm32f4_i2c.o
- .debug_line    0x000020cc      0x359 src\TM_lib\tm_stm32f4_gpio.o
- .debug_line    0x00002425      0x184 src\TM_lib\tm_stm32f4_fonts.o
- .debug_line    0x000025a9      0x41b src\TM_lib\tm_stm32f4_dma.o
- .debug_line    0x000029c4      0x357 src\TM_lib\tm_stm32f4_delay.o
- .debug_line    0x00002d1b      0x489 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
- .debug_line    0x000031a4      0xa52 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
- .debug_line    0x00003bf6      0x448 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
- .debug_line    0x0000403e      0x62e Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
- .debug_line    0x0000466c      0x4f2 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
- .debug_line    0x00004b5e      0x332 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
- .debug_line    0x00004e90      0x3c9 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
- .debug_line    0x00005259      0x232 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_line    0x00000444      0x36e src\main.o
+ .debug_line    0x000007b2      0x46c src\fun.o
+ .debug_line    0x00000c1e      0x324 src\TM_lib\tm_stm32f4_stmpe811.o
+ .debug_line    0x00000f42      0x32b src\TM_lib\tm_stm32f4_spi_dma.o
+ .debug_line    0x0000126d      0x4e8 src\TM_lib\tm_stm32f4_spi.o
+ .debug_line    0x00001755      0x566 src\TM_lib\tm_stm32f4_ili9341.o
+ .debug_line    0x00001cbb      0x41e src\TM_lib\tm_stm32f4_i2c.o
+ .debug_line    0x000020d9      0x359 src\TM_lib\tm_stm32f4_gpio.o
+ .debug_line    0x00002432      0x184 src\TM_lib\tm_stm32f4_fonts.o
+ .debug_line    0x000025b6      0x41b src\TM_lib\tm_stm32f4_dma.o
+ .debug_line    0x000029d1      0x357 src\TM_lib\tm_stm32f4_delay.o
+ .debug_line    0x00002d28      0x489 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
+ .debug_line    0x000031b1      0xa52 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+ .debug_line    0x00003c03      0x448 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_line    0x0000404b      0x62e Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_line    0x00004679      0x4f2 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
+ .debug_line    0x00004b6b      0x332 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_line    0x00004e9d      0x3c9 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_line    0x00005266      0x232 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
 
-.debug_str      0x00000000     0x42bb
+.debug_str      0x00000000     0x42f3
  .debug_str     0x00000000      0x3aa src\system_stm32f4xx.o
                                 0x41e (size before relaxing)
  .debug_str     0x000003aa       0x96 src\stm32f4xx_it.o
                                 0x244 (size before relaxing)
  .debug_str     0x00000440      0x28f src\main.o
                                 0x4a5 (size before relaxing)
- .debug_str     0x000006cf      0x910 src\fun.o
-                                0xd66 (size before relaxing)
- .debug_str     0x00000fdf      0x10e src\TM_lib\tm_stm32f4_stmpe811.o
+ .debug_str     0x000006cf      0x948 src\fun.o
+                                0xd9e (size before relaxing)
+ .debug_str     0x00001017      0x10e src\TM_lib\tm_stm32f4_stmpe811.o
                                 0x573 (size before relaxing)
- .debug_str     0x000010ed      0x363 src\TM_lib\tm_stm32f4_spi_dma.o
+ .debug_str     0x00001125      0x363 src\TM_lib\tm_stm32f4_spi_dma.o
                                 0x6f6 (size before relaxing)
- .debug_str     0x00001450      0x43f src\TM_lib\tm_stm32f4_spi.o
+ .debug_str     0x00001488      0x43f src\TM_lib\tm_stm32f4_spi.o
                                 0x848 (size before relaxing)
- .debug_str     0x0000188f      0x316 src\TM_lib\tm_stm32f4_ili9341.o
+ .debug_str     0x000018c7      0x316 src\TM_lib\tm_stm32f4_ili9341.o
                                 0x81d (size before relaxing)
- .debug_str     0x00001ba5      0x24e src\TM_lib\tm_stm32f4_i2c.o
+ .debug_str     0x00001bdd      0x24e src\TM_lib\tm_stm32f4_i2c.o
                                 0x746 (size before relaxing)
- .debug_str     0x00001df3      0x1cd src\TM_lib\tm_stm32f4_gpio.o
+ .debug_str     0x00001e2b      0x1cd src\TM_lib\tm_stm32f4_gpio.o
                                 0x691 (size before relaxing)
- .debug_str     0x00001fc0       0x8c src\TM_lib\tm_stm32f4_fonts.o
+ .debug_str     0x00001ff8       0x8c src\TM_lib\tm_stm32f4_fonts.o
                                 0x321 (size before relaxing)
- .debug_str     0x0000204c      0x351 src\TM_lib\tm_stm32f4_dma.o
+ .debug_str     0x00002084      0x351 src\TM_lib\tm_stm32f4_dma.o
                                 0xbef (size before relaxing)
- .debug_str     0x0000239d      0x21e src\TM_lib\tm_stm32f4_delay.o
+ .debug_str     0x000023d5      0x21e src\TM_lib\tm_stm32f4_delay.o
                                 0xaef (size before relaxing)
- .debug_str     0x000025bb      0x185 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
+ .debug_str     0x000025f3      0x185 Utilities\STM32F429I-Discovery\stm32f429i_discovery_i2c_ee.o
                                 0x49a (size before relaxing)
- .debug_str     0x00002740      0xa8c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
+ .debug_str     0x00002778      0xa8c Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.o
                                 0xe49 (size before relaxing)
- .debug_str     0x000031cc      0x2e7 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
+ .debug_str     0x00003204      0x2e7 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_spi.o
                                 0x716 (size before relaxing)
- .debug_str     0x000034b3      0x639 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
+ .debug_str     0x000034eb      0x639 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.o
                                 0xa16 (size before relaxing)
- .debug_str     0x00003aec      0x354 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
+ .debug_str     0x00003b24      0x354 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_i2c.o
                                 0x72b (size before relaxing)
- .debug_str     0x00003e40      0x173 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
+ .debug_str     0x00003e78      0x173 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_gpio.o
                                 0x51c (size before relaxing)
- .debug_str     0x00003fb3      0x212 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
+ .debug_str     0x00003feb      0x212 Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_dma.o
                                 0x5bb (size before relaxing)
- .debug_str     0x000041c5       0xf6 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
+ .debug_str     0x000041fd       0xf6 Libraries\STM32F4xx_StdPeriph_Driver\src\misc.o
                                 0x447 (size before relaxing)
 
 .comment        0x00000000       0x83

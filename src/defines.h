@@ -19,7 +19,7 @@
 #define KROK3_CH1 GPIOC,GPIO_Pin_6
 
 #define DIR_CH1 GPIOC,GPIO_Pin_8
-#define STEP_CH1 GPIOA,GPIO_Pin_8
+#define STEP_CH1 GPIOA,GPIO_Pin_9
 #define EN_CH1 GPIOA,GPIO_Pin_10
 
 #define KROK1_CH2 GPIOG,GPIO_Pin_2
@@ -28,7 +28,7 @@
 
 #define DIR_CH2 GPIOD,GPIO_Pin_10
 #define STEP_CH2 GPIOD,GPIO_Pin_8
-#define EN_CH2 GPIOB,GPIO_Pin_14
+#define EN_CH2 GPIOD,GPIO_Pin_15
 
 
 void LED_init();
