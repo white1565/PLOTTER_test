@@ -50,8 +50,8 @@
 
 
 int main(void) {
-	//Initialize system
-	SystemInit();
+    /* Initialize system */
+    SystemInit();
 
 	i=0;
 	num=0;
@@ -81,6 +81,11 @@ int main(void) {
 	TIM_init();
 	TIMINT_init();
 	WY_init();
+	PWM_Init();
+
+
+
+	set_PWM(25);
 
 	//GPIO_SetBits(GPIOG,LED_GREEN);
 
@@ -97,8 +102,24 @@ int main(void) {
 	GPIO_SetBits(EN_CH2);
 	set_krok(1,1);
 	set_krok(1,2);
+/*
+	int brightness = 0;
+	while(1)  // Do not exit
+	    {
+	          brightness++;
 
 
+	          TIM4->CCR3 = 333 - (brightness + 0) % 333; // set brightness
+	          TIM4->CCR4 = 333 - (brightness + 166/2) % 333; // set brightness
+	          TIM4->CCR1 = 333 - (brightness + 333/2) % 333; // set brightness
+	          TIM4->CCR2 = 333 - (brightness + 499/2) % 333; // set brightness
+
+
+	          for(i=0;i<10000;i++);  // delay
+	          for(i=0;i<10000;i++);  // delay
+	          for(i=0;i<10000;i++);  // delay
+	    }
+*/
 	while (1) {
 		if(ch1_s==1){
 			GPIO_ResetBits(EN_CH1);
@@ -181,7 +202,11 @@ int main(void) {
 					ch3_v=touchData.y;
 					TM_ILI9341_DrawFilledRectangle(130, 10, 170, touchData.y, ILI9341_COLOR_WHITE);
 					TM_ILI9341_DrawFilledRectangle(130, touchData.y, 170, 210, ILI9341_COLOR_GREEN2);
+					ch3_v=(210-ch3_v)/2;
 					tostring(str, ch3_v);
+					if(ch3_s==1){
+						set_PWM(ch3_v);
+					}
 					TM_ILI9341_Puts(180, 40, "CH3: ", &TM_Font_7x10, ILI9341_COLOR_BLACK, ILI9341_COLOR_BLUE2);
 					TM_ILI9341_Puts(210, 40, "   ", &TM_Font_7x10, ILI9341_COLOR_BLACK, ILI9341_COLOR_BLUE2);
 					TM_ILI9341_Puts(210, 40, str, &TM_Font_7x10, ILI9341_COLOR_BLACK, ILI9341_COLOR_BLUE2);

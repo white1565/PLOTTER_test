@@ -269,7 +269,7 @@ void TIM_init(){
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
 	//TIM_TimeBaseInitTypeDef timerInitStructure;
-	timerInitStructure.TIM_Prescaler = 1800;
+	timerInitStructure.TIM_Prescaler = 18000;
 	timerInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	timerInitStructure.TIM_Period = 10;
 	timerInitStructure.TIM_ClockDivision = TIM_CKD_DIV4;
@@ -298,12 +298,122 @@ void TIMINT_init()
     NVIC_Init(&nvicStructure);
 }
 
+void PWM_Init(void) {
+	   TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+	   TIM_OCInitTypeDef  TIM_OCInitStructure;
+
+	  /* TIM config */
+
+	  GPIO_InitTypeDef GPIO_InitStructure;
+
+
+	  /* TIM4 clock enable */
+	  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+
+
+	  /* LEDs are on GPIOD */
+	  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+
+	  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14 ;// | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+	  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+	  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+	  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP ;
+	  GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+
+	 // GPIO_PinAFConfig(GPIOD, GPIO_PinSource12, GPIO_AF_TIM4);
+	 // GPIO_PinAFConfig(GPIOD, GPIO_PinSource13, GPIO_AF_TIM4);
+	    GPIO_PinAFConfig(GPIOD, GPIO_PinSource14, GPIO_AF_TIM4);
+	 // GPIO_PinAFConfig(GPIOD, GPIO_PinSource15, GPIO_AF_TIM4);
+
+	  /* pwm set up */
+
+
+	  /* Compute the prescaler value */
+	 uint16_t PrescalerValue = (uint16_t) ((SystemCoreClock /2) / 21000000) - 1;
+
+
+	  /* Time base configuration */
+	  TIM_TimeBaseStructure.TIM_Period = 665;
+	  TIM_TimeBaseStructure.TIM_Prescaler = PrescalerValue;
+	  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+	  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+
+
+	  TIM_TimeBaseInit(TIM4, &TIM_TimeBaseStructure);
+
+
+	  /* PWM1 Mode configuration: Channel1 */
+	  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+	  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+	  TIM_OCInitStructure.TIM_Pulse = 0;
+	  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+
+
+	  TIM_OC1Init(TIM4, &TIM_OCInitStructure);
+
+
+	  TIM_OC1PreloadConfig(TIM4, TIM_OCPreload_Enable);
+
+
+	  /* PWM1 Mode configuration: Channel2 */
+	  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+	  TIM_OCInitStructure.TIM_Pulse = 0;
+
+
+	  TIM_OC2Init(TIM4, &TIM_OCInitStructure);
+
+
+	  TIM_OC2PreloadConfig(TIM4, TIM_OCPreload_Enable);
+
+
+	  /* PWM1 Mode configuration: Channel3 */
+	  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+	  TIM_OCInitStructure.TIM_Pulse = 0;
+
+
+	  TIM_OC3Init(TIM4, &TIM_OCInitStructure);
+
+
+	  TIM_OC3PreloadConfig(TIM4, TIM_OCPreload_Enable);
+
+
+	  /* PWM1 Mode configuration: Channel4 */
+	  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+	  TIM_OCInitStructure.TIM_Pulse = 0;
+
+
+	  TIM_OC4Init(TIM4, &TIM_OCInitStructure);
+
+
+	  TIM_OC4PreloadConfig(TIM4, TIM_OCPreload_Enable);
+
+
+	  TIM_ARRPreloadConfig(TIM4, ENABLE);
+
+
+	  /* TIM4 enable counter */
+	  TIM_Cmd(TIM4, ENABLE);
+
+	  TIM4->CCR3 = 0; // set brightness
+}
+
+void set_PWM(int a){
+	int pulse_length;
+
+	pulse_length = ((665 + 1) * a) / 100 - 1;
+	TIM4->CCR3 = pulse_length;
+}
+
 void TOUCH_init(){
 	//Initialize Touch
 	    if (TM_STMPE811_Init() != TM_STMPE811_State_Ok) {
-	        TM_ILI9341_Puts(20, 20, "STMPE811 Error", &TM_Font_11x18, ILI9341_COLOR_ORANGE, ILI9341_COLOR_BLACK);
+	    	if (TM_STMPE811_Init() != TM_STMPE811_State_Ok) {
+	    		TM_ILI9341_Puts(20, 20, "STMPE811 Error", &TM_Font_11x18, ILI9341_COLOR_ORANGE, ILI9341_COLOR_BLACK);
 
-	        while (1);
+	    		while (1);
+	    	}
 	    }
 }
 
@@ -362,8 +472,8 @@ void WY_init(){
 		//Enable clock for GPOID
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
 		GPIO_InitTypeDef GPIO_InitDefD;
-		//Pins 8,10,12,14
-		GPIO_InitDefD.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_15 | GPIO_Pin_10 | GPIO_Pin_12 | GPIO_Pin_14;
+		//Pins 8,10,9,14
+		GPIO_InitDefD.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_15 | GPIO_Pin_10 | GPIO_Pin_9 | GPIO_Pin_14;
 		//Mode output
 		GPIO_InitDefD.GPIO_Mode = GPIO_Mode_OUT;
 		//Output type push-pull
@@ -374,6 +484,7 @@ void WY_init(){
 		GPIO_InitDefD.GPIO_Speed = GPIO_Speed_50MHz;
 		//Initialize pins
 		GPIO_Init(GPIOD, &GPIO_InitDefD);
+
 }
 
 void sEE_TIMEOUT_UserCallback(){

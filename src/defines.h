@@ -23,8 +23,8 @@
 #define EN_CH1 GPIOA,GPIO_Pin_10
 
 #define KROK1_CH2 GPIOG,GPIO_Pin_2
-#define KROK2_CH2 GPIOD,GPIO_Pin_14
-#define KROK3_CH2 GPIOD,GPIO_Pin_12
+#define KROK2_CH2 GPIOD,GPIO_Pin_13
+#define KROK3_CH2 GPIOD,GPIO_Pin_9
 
 #define DIR_CH2 GPIOD,GPIO_Pin_10
 #define STEP_CH2 GPIOD,GPIO_Pin_8
@@ -40,6 +40,8 @@ void TOUCH_init();
 void tostring(char [], int);
 void ekran(int);
 void set_krok(int,int);
+void PWM_Init(void);
+void set_PWM(int);
 
 int i,num,counter1,counter2,counter3;
 char str[10];
