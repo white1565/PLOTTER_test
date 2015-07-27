@@ -71,6 +71,7 @@ int main(void) {
 	ch2_k=0;
 	ch3_k=0;
 	krok=1;
+	pisak=0;
 	//Enable HSE clock
 	RCC_HSEConfig(RCC_HSE_ON);
 	//Wait for clock to stabilize
@@ -100,6 +101,8 @@ int main(void) {
 	touchData.orientation = TM_STMPE811_Orientation_Portrait_2;
 	GPIO_SetBits(EN_CH1);
 	GPIO_SetBits(EN_CH2);
+	GPIO_SetBits(RESET_CH1);
+	GPIO_SetBits(RESET_CH2);
 	set_krok(1,1);
 	set_krok(1,2);
 /*
@@ -372,6 +375,21 @@ int main(void) {
 					//180, 220, 235, 245,
 					set_krok(krok,1);
 					set_krok(krok,2);
+				}
+//--------------------- OPUSZCZENIE PISAKA -----------------------
+				if((touchData.x>180 && touchData.x<235)&&(touchData.y>260 && touchData.y<315)){
+					if(pisak==0){
+						set_pisak(1);
+						pisak=1;
+						TM_ILI9341_Puts(185, 280, " UP ", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_MAGENTA);
+					}
+					else{
+						set_pisak(0);
+						pisak=0;
+						TM_ILI9341_Puts(185, 280, "DOWN", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_MAGENTA);
+					}
+					Delayms(200);
+					//180, 260, 235, 315,
 				}
 			}
 

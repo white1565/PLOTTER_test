@@ -78,6 +78,8 @@ void ekran(int nr){
 		TM_ILI9341_Puts(185, 195, "1/8", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_WHITE);
 		TM_ILI9341_DrawFilledRectangle(180, 220, 235, 245, ILI9341_COLOR_WHITE);
 		TM_ILI9341_Puts(185, 225, "1/16", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_WHITE);
+		TM_ILI9341_DrawFilledRectangle(180, 260, 235, 315, ILI9341_COLOR_MAGENTA);
+		TM_ILI9341_Puts(185, 280, "DOWN", &TM_Font_11x18, ILI9341_COLOR_BLACK, ILI9341_COLOR_MAGENTA);
 		return;
 	default:
 		//Rotate LCD for 90 degrees
@@ -143,6 +145,7 @@ void tostring(char str[], int num)
 
 void set_krok(int kr,int ch){
 	if(ch==1){
+		GPIO_ResetBits(RESET_CH1);
 		GPIO_SetBits(EN_CH1);
 		Delayms(100);
 		if(kr==1){
@@ -172,9 +175,11 @@ void set_krok(int kr,int ch){
 		}
 		Delayms(100);
 		GPIO_ResetBits(EN_CH1);
+		GPIO_SetBits(RESET_CH1);
 		Delayms(100);
 	}
 	else if (ch==2){
+		GPIO_ResetBits(RESET_CH2);
 		GPIO_SetBits(EN_CH2);
 		Delayms(100);
 		if(kr==1){
@@ -204,6 +209,7 @@ void set_krok(int kr,int ch){
 		}
 		Delayms(100);
 		GPIO_ResetBits(EN_CH2);
+		GPIO_SetBits(RESET_CH2);
 		Delayms(100);
 	}
 }
@@ -335,8 +341,8 @@ void PWM_Init(void) {
 
 
 	  /* Time base configuration */
-	  TIM_TimeBaseStructure.TIM_Period = 665;
-	  TIM_TimeBaseStructure.TIM_Prescaler = PrescalerValue;
+	  TIM_TimeBaseStructure.TIM_Period = 52500;
+	  TIM_TimeBaseStructure.TIM_Prescaler = 31;
 	  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
 	  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 
@@ -402,8 +408,17 @@ void PWM_Init(void) {
 void set_PWM(int a){
 	int pulse_length;
 
-	pulse_length = ((665 + 1) * a) / 100 - 1;
+	pulse_length = ((52500 + 1) * a) / 100 - 1;
 	TIM4->CCR3 = pulse_length;
+}
+
+void set_pisak(int i){
+	if(i){
+		set_PWM(5);
+	}
+	else{
+		set_PWM(15);
+	}
 }
 
 void TOUCH_init(){
@@ -441,7 +456,7 @@ void WY_init(){
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
 		GPIO_InitTypeDef GPIO_InitDefA;
 		//Pins 8,10
-		GPIO_InitDefA.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10;
+		GPIO_InitDefA.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_12;
 		//Mode output
 		GPIO_InitDefA.GPIO_Mode = GPIO_Mode_OUT;
 		//Output type push-pull
@@ -473,7 +488,7 @@ void WY_init(){
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
 		GPIO_InitTypeDef GPIO_InitDefD;
 		//Pins 8,10,9,14
-		GPIO_InitDefD.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_15 | GPIO_Pin_10 | GPIO_Pin_9 | GPIO_Pin_14;
+		GPIO_InitDefD.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_11 | GPIO_Pin_10 | GPIO_Pin_9 | GPIO_Pin_14;
 		//Mode output
 		GPIO_InitDefD.GPIO_Mode = GPIO_Mode_OUT;
 		//Output type push-pull
@@ -484,6 +499,22 @@ void WY_init(){
 		GPIO_InitDefD.GPIO_Speed = GPIO_Speed_50MHz;
 		//Initialize pins
 		GPIO_Init(GPIOD, &GPIO_InitDefD);
+
+		//Enable clock for GPOIE
+		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+		GPIO_InitTypeDef GPIO_InitDefE;
+		//Pins 8,10,9,14
+		GPIO_InitDefE.GPIO_Pin = GPIO_Pin_14 | GPIO_Pin_15;
+		//Mode output
+		GPIO_InitDefE.GPIO_Mode = GPIO_Mode_OUT;
+		//Output type push-pull
+		GPIO_InitDefE.GPIO_OType = GPIO_OType_PP;
+		//Without pull resistors
+		GPIO_InitDefE.GPIO_PuPd = GPIO_PuPd_NOPULL;
+		//50MHz pin speed
+		GPIO_InitDefE.GPIO_Speed = GPIO_Speed_50MHz;
+		//Initialize pins
+		GPIO_Init(GPIOE, &GPIO_InitDefE);
 
 }
 
